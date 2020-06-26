@@ -1,0 +1,175 @@
+
+.container {
+  background-color: black;
+  height: 300px;
+  width:300px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="checkbox"] {
+  z-index: 5;
+  position: relative;
+  height: 180px;
+  width: 180px;
+  margin-left: 50px;
+  margin-top: 50px;
+  opacity: 0;
+}
+.jedisword-1, .jedisword-2, .jedisword-3 {
+  height: 10px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  transition-property: all;
+
+
+}
+.jedisword-1 {
+  position: absolute;
+  transition-property: all;
+  left: 900px;
+  top: 50px;
+  opacity: 0;
+}
+.jedisword-2 {
+  transform: rotate(140deg);
+  position: absolute;
+  transition-property: all;
+  top: 200px;
+  left: 800px;
+}
+.jedisword-3 {
+  transform: rotate(40deg);
+  position: absolute;
+  transition-property: all;
+  top: 200px;
+  left: 800px;
+}
+.long {
+  background-color: white;
+  width: 150px;
+  height: 10px;
+}
+.short {
+  background-color: white;
+  width: 30px;
+  height: 10px;
+}
+input:hover~ .jedisword-2 {
+box-shadow: 0 0 20px 15px #CC0000;
+}
+input:hover~ .jedisword-3 {
+box-shadow: 0 0 20px 15px #66FF33;
+}
+input:checked~ .jedisword-1 {
+  transition-duration: 2s;
+  opacity: 1;
+  left: 800px;
+  top: 150px;
+}
+input:checked~ .jedisword-2 {
+  box-shadow: none;
+  transition-duration: 2s;
+  transform: rotate(180deg);
+}
+input:checked~ .jedisword-3 {
+  box-shadow: none;
+  transition-duration: 2s;
+  transform: rotate(0deg);
+  top: 250px;
+}
+.container-2 {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ball-container {
+  height: 150px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.shadow-container {
+  height: 80px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.ball {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  opacity: 80%;
+}
+.shadow {
+  height: 4px;
+  width: 100px;
+  border-radius: 20%;
+  opacity: 10%;
+}
+.ball-1, .ball-2, .ball-3, .shadow-1, .shadow-2, .shadow-3 {
+  background-color: #6600FF;
+}
+.ball-1 {
+  animation-name: firstball;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.ball-4, .shadow-4 {
+  background: linear-gradient(to right, #6600FF, #CC66FF);
+}
+
+.ball-5, .ball-6, .ball-7, .shadow-5, .shadow-6, .shadow-7 {
+  background-color: #CC66FF;
+}
+.ball-7 {
+  animation-name: lastball;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+  animation-direction: alternate;
+}
+.shadow-1 {
+  animation-name: firstshadow;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.shadow-7 {
+  animation-name: lastshadow;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+  animation-direction: alternate;
+}
+
+@keyframes firstball {
+  100%{
+    transform:translateX(-250px) translateY(-150px);
+  }
+}
+@keyframes lastball {
+  100%{
+    transform:translateX(250px) translateY(-150px);
+  }
+}
+@keyframes firstshadow {
+  100% {
+    transform: translateX(-250px);
+  }
+}
+@keyframes lastshadow {
+  100% {
+    transform: translateX(250px);
+  }
+}
